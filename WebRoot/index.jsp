@@ -1,8 +1,8 @@
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+String node_id = request.getParameter("node_id");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>Book Management System starting page</title>
+    <title>My JSP 'index.jsp' starting page</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -20,32 +20,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
   </head>
-  
   <body>
-    <h1 align = "CENTER">Welcome <s:property value = "userName"></s:property> </h1> <br>
-    
-    <s:form align = "CENTER" action = "SEARCH_QUERY">
-    	<s:textfield name = "queryInput" align = "CENTER" />
-    	<s:radio name = "queryType" label = "Search Option*" list = "{'Name', 'Institution', 'Profession', 'N\A'}"/>
-    	<s:submit align = "CENTER"/>
-    </s:form>
-     
-  	<s:form action = "MANAGE_QUERY" align = "CENTER">
-  		<s:submit value = "My Trees"  />
-  	</s:form>
-     
-     
-    <h6 align = "CENTER" > Edition 1.0</h6> <br>
-    <!-- 
-    <h6>  
-    	test <br> 
-    	1. <s:property value = "currentIndex" /> <br>
-    	2. <s:property value = "currentISBN" /> <br>
-    	3. <s:property value = "bookSR.get(currentIndex).Title" /> <br>
-    	4. <s:property value = "bookSR.size()" /> <br>
-    	5. <s:property value = "authorSR.Name" /> <br>
-    	6. <s:property value = "authorized" /> <br>
-    </h6>
-     -->
+  	<a href="tree.jsp">check the tree</a><br>
+  	<a href="tree_editable.jsp">edit the tree</a><br>
   </body>
 </html>
